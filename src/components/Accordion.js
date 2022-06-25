@@ -26,7 +26,6 @@ const Accordion = ({ items }) => {
     return (
         <div className='accordion ui styled accordion'>
             {renderedItems}
-            {activeIndex}
         </div>
     )
 }
