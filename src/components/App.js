@@ -4,7 +4,7 @@ const App = () => {
     const [items, setItems] = useState([]);
 
     return (
-        <div>App</div>
+        <div className='app'>App</div>
     )
 }
 
