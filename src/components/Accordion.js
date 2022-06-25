@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Accordion = () => {
+const Accordion = ({ items }) => {
     return (
         <div>Accordion</div>
     )
