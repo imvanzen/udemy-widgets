@@ -22,7 +22,7 @@ const App = () => {
     }, [])
 
     return (
-        <div className='app'>
+        <div className='app ui container'>
             <Accordion items={items} />
         </div>
     )
