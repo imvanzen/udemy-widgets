@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Accordion from './Accordion';
+import Accordion from './components/Accordion';
 
 const App = () => {
     const [items, setItems] = useState([]);
