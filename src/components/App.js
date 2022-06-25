@@ -5,7 +5,9 @@ const App = () => {
     const [items, setItems] = useState([]);
 
     return (
-        <div className='app'>App</div>
+        <div className='app'>
+            <Accordion />
+        </div>
     )
 }
 
