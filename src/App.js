@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Accordion from './components/Accordion';
+import Wikipedia from './components/Wikipedia';
 
 const App = () => {
     const [items, setItems] = useState([]);
@@ -23,7 +24,8 @@ const App = () => {
 
     return (
         <div className='app ui container'>
-            <Accordion items={items} />
+            {/* <Accordion items={items} /> */}
+            <Wikipedia />
         </div>
     )
 }
