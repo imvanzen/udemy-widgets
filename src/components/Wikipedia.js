@@ -18,6 +18,15 @@ const Wikipedia = () => {
         }
     }, [term])
 
+    const renderedResults = results.map(result => (
+        <div className="item" key={result.pageid}>
+            <div className="content">
+                <div className="header">{result.title}</div>
+                {result.snippet}
+            </div>
+        </div>
+    ))
+
     return (
         <>
             <div className="wikipedia ui form">
@@ -29,8 +38,8 @@ const Wikipedia = () => {
                         value={term} />
                 </div>
             </div>
-            <div className='wikipedia-results'>
-                {results.length}
+            <div className='wikipedia-results ui celled list'>
+                {renderedResults}
             </div>
         </>
     )
