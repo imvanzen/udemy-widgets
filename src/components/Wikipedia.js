@@ -1,3 +1,5 @@
+import './Wikipedia.css'
+
 import React, { useEffect, useState } from "react"
 import wikipedia from '../api/wikipedia'
 
@@ -22,7 +24,7 @@ const Wikipedia = () => {
         <div className="item" key={result.pageid}>
             <div className="content">
                 <div className="header">{result.title}</div>
-                {result.snippet}
+                <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
             </div>
         </div>
     ))
