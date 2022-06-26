@@ -43,7 +43,7 @@ const App = () => {
         <div className='app ui container'>
             {/* <Accordion items={items} /> */}
             {/* <Wikipedia /> */}
-            <Dropdown />
+            <Dropdown options={options} />
         </div>
     )
 }
