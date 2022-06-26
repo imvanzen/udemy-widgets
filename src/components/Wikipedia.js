@@ -15,8 +15,13 @@ const Wikipedia = () => {
             setResults(data.query.search)
         }
 
-        if (term) {
-            getResults()
+        const timeoutId = setTimeout(() => {
+            if (term) {
+                getResults()
+            }
+        }, 500)
+        return () => {
+            clearTimeout(timeoutId)
         }
     }, [term])
 
