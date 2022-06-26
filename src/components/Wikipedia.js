@@ -4,21 +4,26 @@ import React, { useEffect, useState } from "react"
 import wikipedia from '../api/wikipedia'
 
 const Wikipedia = () => {
-    const [term, setTerm] = useState('')
+    const [term, setTerm] = useState('React')
+    const [debouncedTerm, setDebouncedTerm] = useState(term)
     const [results, setResults] = useState([])
 
     useEffect(() => {
         async function getResults() {
             const { data } = await wikipedia.get('', {
-                params: { srsearch: term }
+                params: { srsearch: debouncedTerm }
             })
             setResults(data.query.search)
         }
 
+        if (debouncedTerm) {
+            getResults()
+        }
+    }, [debouncedTerm])
+
+    useEffect(() => {
         const timeoutId = setTimeout(() => {
-            if (term) {
-                getResults()
-            }
+            setDebouncedTerm(term)
         }, 500)
         return () => {
             clearTimeout(timeoutId)
