@@ -6,14 +6,16 @@ const Wikipedia = () => {
     const [results, setResults] = useState([])
 
     useEffect(() => {
-        if (!term) return
         async function getResults() {
-            const response = await wikipedia.get('', {
+            const { data } = await wikipedia.get('', {
                 params: { srsearch: term }
             })
-            setResults(response.data.query.search)
+            setResults(data.query.search)
         }
-        getResults()
+
+        if (term) {
+            getResults()
+        }
     }, [term])
 
     return (
