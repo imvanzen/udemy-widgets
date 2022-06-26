@@ -36,7 +36,8 @@ const Wikipedia = () => {
                 <a
                     className='ui button'
                     href={`https://en.wikipedia.org?curid=${result.pageid}`}
-                    target='_blank'>Go</a>
+                    target='_blank'
+                    rel='noreferrer'>Go</a>
             </div>
             <div className='content'>
                 <div className="header">{result.title}</div>
