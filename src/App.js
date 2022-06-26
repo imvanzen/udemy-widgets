@@ -6,6 +6,7 @@ import Dropdown from './components/Dropdown';
 const App = () => {
     const [items, setItems] = useState([]);
     const [options, setOptions] = useState([]);
+    const [selected, setSelected] = useState({});
 
     useEffect(() => {
         setItems([
@@ -39,11 +40,18 @@ const App = () => {
         ])
     }, [])
 
+    useEffect(() => {
+        setSelected(options[0])
+    }, [options])
+
     return (
         <div className='app ui container'>
             {/* <Accordion items={items} /> */}
             {/* <Wikipedia /> */}
-            <Dropdown options={options} />
+            <Dropdown
+                selected={selected}
+                onSelectedChange={setSelected}
+                options={options} />
         </div>
     )
 }
