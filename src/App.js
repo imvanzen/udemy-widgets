@@ -5,6 +5,7 @@ import Dropdown from './components/Dropdown';
 
 const App = () => {
     const [items, setItems] = useState([]);
+    const [options, setOptions] = useState([]);
 
     useEffect(() => {
         setItems([
@@ -19,6 +20,21 @@ const App = () => {
             {
                 title: 'How do you use React?',
                 description: 'You use React by creating components'
+            }
+        ])
+
+        setOptions([
+            {
+                label: 'The Color Red',
+                value: 'red'
+            },
+            {
+                label: 'The Color Green',
+                value: 'green'
+            },
+            {
+                label: 'The Color Blue',
+                value: 'blue'
             }
         ])
     }, [])
