@@ -6,19 +6,18 @@ const Translate = ({
     text
 }) => {
     const [debouncedText, setDebouncedText] = useState('')
-    const [translation, setTranslation] = useState('')
+    const [translations, setTranslations] = useState([])
 
     useEffect(() => {
         async function getTranslation() {
-            const response = await axios.get('https://translation.googleapis.com/language/translate/v2', {
+            const { data } = await axios.get('https://translation.googleapis.com/language/translate/v2', {
                 params: {
-                    target: debouncedText,
-                    q: language,
-                    key: ''
+                    q: debouncedText,
+                    target: language,
+                    key: process.env.REACT_APP_GOOGLE_TRANSLATION_API_KEY
                 }
             })
-            console.log(response)
-            // setTranslation(data.query.search)
+            setTranslations(data.data.translations)
         }
 
         if (debouncedText) {
@@ -35,9 +34,13 @@ const Translate = ({
         }
     }, [text])
 
+    const renderedTranslationText = translations.map(({ translatedText }, index) => (
+        <p key={index}>{translatedText}</p>
+    ))
+
     return (
         <div className='convert ui'>
-            Convert
+            {renderedTranslationText}
         </div>
     )
 }
