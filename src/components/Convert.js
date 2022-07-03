@@ -25,6 +25,8 @@ const Translate = ({
 
         if (debouncedText) {
             getTranslation()
+        } else {
+            setTranslations([])
         }
     }, [debouncedText, language])
 
