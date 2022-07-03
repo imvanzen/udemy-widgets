@@ -26,10 +26,7 @@ const Dropdown = ({
             if (ref.current.contains(e.target)) return
             setDropdown(false)
         }
-        document.body.addEventListener(
-            'click',
-            onBodyClick,
-            { capture: true }
+        document.body.addEventListener('click', onBodyClick, { capture: true }
         )
         return () => {
             document.body.removeEventListener('click', onBodyClick, { capture: true })
