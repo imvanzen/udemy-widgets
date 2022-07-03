@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const Dropdown = ({
     options,
@@ -6,6 +6,7 @@ const Dropdown = ({
     onSelectedChange
 }) => {
     const [dropdown, setDropdown] = useState(false)
+    const ref = useRef()
 
     const renderedOptions = options
         .filter(option => option.value !== selected.value)
@@ -31,7 +32,7 @@ const Dropdown = ({
     }, []);
 
     return (
-        <div className='dropdown ui form'>
+        <div ref={ref} className='dropdown ui form'>
             <div className='field'>
                 <label className='label'>Select a Color</label>
                 <div
