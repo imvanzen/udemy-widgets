@@ -31,6 +31,9 @@ const Dropdown = ({
             onBodyClick,
             { capture: true }
         )
+        return () => {
+            document.body.removeEventListener('click', onBodyClick, { capture: true })
+        }
     }, []);
 
     return (
