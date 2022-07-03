@@ -34,21 +34,23 @@ const Dropdown = ({
     }, []);
 
     return (
-        <div ref={ref} className='dropdown ui form'>
-            <div className='field'>
-                <label className='label'>Select a Color</label>
-                <div
-                    onClick={() => setDropdown(!dropdown)}
-                    className={`ui selection dropdown${dropdown ? ' visible active' : ''}`}
-                >
-                    <i className='dropdown icon' />
-                    <div className='text'>{dropdownLabel}</div>
-                    <div className={`menu${dropdown ? ' visible transition' : ''}`}>
-                        {renderedOptions}
+        <>
+            <div ref={ref} className='dropdown ui form'>
+                <div className='field'>
+                    <label className='label'>Select a Color</label>
+                    <div
+                        onClick={() => setDropdown(!dropdown)}
+                        className={`ui selection dropdown${dropdown ? ' visible active' : ''}`}
+                    >
+                        <i className='dropdown icon' />
+                        <div className='text'>{dropdownLabel}</div>
+                        <div className={`menu${dropdown ? ' visible transition' : ''}`}>
+                            {renderedOptions}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
