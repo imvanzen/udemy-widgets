@@ -22,14 +22,15 @@ const Dropdown = ({
     const dropdownLabel = selected.label || 'Select Color'
 
     useEffect(() => {
+        const onBodyClick = e => {
+            if (ref.current.contains(e.target)) return
+            setDropdown(false)
+        }
         document.body.addEventListener(
             'click',
-            e => {
-                if (ref.current.contains(e.target)) return
-                setDropdown(false)
-            },
+            onBodyClick,
             { capture: true }
-        );
+        )
     }, []);
 
     return (
