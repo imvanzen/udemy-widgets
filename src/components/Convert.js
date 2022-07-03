@@ -38,7 +38,7 @@ const Translate = ({
     }, [text])
 
     const renderedTranslationText = translations.map(({ translatedText }, index) => (
-        <p key={index}>{translatedText}</p>
+        <h1 key={index} className='ui header'>{translatedText}</h1>
     ))
 
     return (
