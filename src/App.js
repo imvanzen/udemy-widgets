@@ -41,9 +41,13 @@ const App = () => {
     }, [])
 
     useEffect(() => {
-        const [first = []] = options;
-        setSelected(pre => ({ ...pre, first }))
+        const [first = {}] = options;
+        setSelected(pre => ({ ...pre, ...first }))
     }, [options])
+
+    useEffect(() => {
+        console.log(selected)
+    }, [selected])
 
     return (
         <div className='app ui container'>
