@@ -10,13 +10,16 @@ const Translate = ({
 
     useEffect(() => {
         async function getTranslation() {
-            const { data } = await axios.get('https://translation.googleapis.com/language/translate/v2', {
-                params: {
-                    q: debouncedText,
-                    target: language,
-                    key: process.env.REACT_APP_GOOGLE_TRANSLATION_API_KEY
-                }
-            })
+            const { data } = await axios.post(
+                'https://translation.googleapis.com/language/translate/v2',
+                {},
+                {
+                    params: {
+                        q: debouncedText,
+                        target: language,
+                        key: process.env.REACT_APP_GOOGLE_TRANSLATION_API_KEY
+                    }
+                })
             setTranslations(data.data.translations)
         }
 
