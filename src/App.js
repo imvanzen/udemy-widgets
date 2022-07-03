@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Accordion from './components/Accordion';
 import Wikipedia from './components/Wikipedia';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 
 const App = () => {
     const [items, setItems] = useState([]);
@@ -49,10 +50,11 @@ const App = () => {
         <div className='app ui container'>
             {/* <Accordion items={items} /> */}
             {/* <Wikipedia /> */}
-            <Dropdown
+            {/* {<Dropdown
                 selected={selected}
                 onSelectedChange={setSelected}
-                options={options} />
+                options={options} />} */}
+            <Translate />
         </div>
     )
 }
