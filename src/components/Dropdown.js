@@ -5,14 +5,16 @@ const Dropdown = ({
     selected,
     onSelectedChange
 }) => {
-    const renderedOptions = options.map(option => (
-        <div
-            key={option.value}
-            className='item'
-            onClick={() => onSelectedChange(option)}>
-            {option.label}
-        </div>
-    ))
+    const renderedOptions = options
+        .filter(option => option.value !== selected.value)
+        .map(option => (
+            <div
+                key={option.value}
+                className='item'
+                onClick={() => onSelectedChange(option)}>
+                {option.label}
+            </div>
+        ))
 
     const dropdownLabel = selected.label || 'Select Color'
 
