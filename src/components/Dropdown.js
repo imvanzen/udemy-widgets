@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Dropdown = ({
     options,
     selected,
     onSelectedChange
 }) => {
+    const [dropdown, setDropdown] = useState(false)
+
     const renderedOptions = options
         .filter(option => option.value !== selected.value)
         .map(option => (
@@ -22,10 +24,13 @@ const Dropdown = ({
         <div className='dropdown ui form'>
             <div className='field'>
                 <label className='label'>Select a Color</label>
-                <div className='ui selection dropdown visible active'>
+                <div
+                    onClick={() => setDropdown(!dropdown)}
+                    className={`ui selection dropdown${dropdown ? ' visible active' : ''}`}
+                >
                     <i className='dropdown icon' />
                     <div className='text'>{dropdownLabel}</div>
-                    <div className='menu visible transition'>
+                    <div className={`menu${dropdown ? ' visible transition' : ''}`}>
                         {renderedOptions}
                     </div>
                 </div>
