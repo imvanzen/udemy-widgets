@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Dropdown = ({
     options,
@@ -19,6 +19,16 @@ const Dropdown = ({
         ))
 
     const dropdownLabel = selected.label || 'Select Color'
+
+    useEffect(() => {
+        document.body.addEventListener(
+            'click',
+            e => {
+                setDropdown(false)
+            },
+            { capture: true }
+        );
+    }, []);
 
     return (
         <div className='dropdown ui form'>
