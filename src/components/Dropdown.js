@@ -14,7 +14,7 @@ const Dropdown = ({
         </div>
     ))
 
-    const dropdownLabel = selected?.label || 'Select Color'
+    const dropdownLabel = selected.label || 'Select Color'
 
     return (
         <div className='dropdown ui form'>

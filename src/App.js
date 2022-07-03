@@ -41,7 +41,8 @@ const App = () => {
     }, [])
 
     useEffect(() => {
-        setSelected(options[0])
+        const [first = []] = options;
+        setSelected(pre => ({ ...pre, first }))
     }, [options])
 
     return (
