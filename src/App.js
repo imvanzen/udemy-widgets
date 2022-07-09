@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Route from './Route';
+import Header from './components/Header'
 import Accordion from './components/Accordion';
 import Wikipedia from './components/Wikipedia';
 import ColouredText from './components/ColouredText';
@@ -41,26 +42,9 @@ const App = () => {
         ])
     }, [])
 
-    const isActive = pathname => {
-        return window.location.pathname === pathname ? 'active' : ''
-    }
-
     return (
         <div className='app ui container' style={{ marginTop: '10px' }}>
-            <div className="ui pointing menu">
-                <a href='/' className={`item ${isActive('/')}`}>
-                    Accordion
-                </a>
-                <a href='/wikipedia' className={`item ${isActive('/wikipedia')}`}>
-                    Wikipedia
-                </a>
-                <a href='/dropdown' className={`item ${isActive('/dropdown')}`}>
-                    Dropdown
-                </a>
-                <a href='/translate' className={`item ${isActive('/translate')}`}>
-                    Translate
-                </a>
-            </div>
+            <Header />
             <div className="ui segment">
                 <Route path='/' render={<Accordion items={items} />} />
                 <Route path='/wikipedia' render={<Wikipedia />} />

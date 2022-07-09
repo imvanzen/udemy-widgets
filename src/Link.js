@@ -12,3 +12,5 @@ const Link = ({ path, children }) => {
         </a>
     )
 }
+
+export default Link
