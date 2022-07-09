@@ -62,10 +62,10 @@ const App = () => {
                 </a>
             </div>
             <div className="ui segment">
-                <Route path='/' component={<Accordion items={items} />} />
-                <Route path='/wikipedia' component={<Wikipedia />} />
-                <Route path='/dropdown' component={<ColouredText options={options} />} />
-                <Route path='/translate' component={<Translate />} />
+                <Route path='/' render={<Accordion items={items} />} />
+                <Route path='/wikipedia' render={<Wikipedia />} />
+                <Route path='/dropdown' render={<ColouredText options={options} />} />
+                <Route path='/translate' render={<Translate />} />
             </div>
         </div>
     )

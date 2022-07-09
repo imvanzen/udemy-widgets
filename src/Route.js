@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Route = ({ path, component }) => {
-    const { pathname } = window.location;
-    if (path === pathname)
-        return component;
+const Route = ({ path, render }) => {
+    return window.location.pathname === path
+        ? render
+        : null
 }
 
 export default Route
