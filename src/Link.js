@@ -1,13 +1,16 @@
 import React from 'react'
 
-const Link = ({ path, children }) => {
-    const isActive = pathname => {
-        return window.location.pathname === pathname
-            ? 'item active'
-            : 'item'
+const Link = ({ href, className, children }) => {
+    const wrapWithIsActive = () => {
+        return window.location.pathname === href
+            ? `${className} active`
+            : className
     }
     return (
-        <a href={path} className={isActive(path)}>
+        <a {...{
+            href,
+            className: wrapWithIsActive()
+        }}>
             {children}
         </a>
     )

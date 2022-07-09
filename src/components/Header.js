@@ -3,10 +3,10 @@ import Link from '../Link'
 
 const Header = () => (
     <div className="ui pointing menu">
-        <Link path='/'>Accordion</Link>
-        <Link path='/wikipedia'>Wikipedia</Link>
-        <Link path='/dropdown'>Dropdown</Link>
-        <Link path='/translate'>Translate</Link>
+        <Link href='/' className='item'>Accordion</Link>
+        <Link href='/wikipedia' className='item'>Wikipedia</Link>
+        <Link href='/dropdown' className='item'>Dropdown</Link>
+        <Link href='/translate' className='item'>Translate</Link>
     </div>
 )
 
